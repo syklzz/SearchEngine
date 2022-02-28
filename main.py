@@ -1,5 +1,5 @@
-from FileManager.file_manager import FileManager
+from App.app import app
 
 
 if __name__ == "__main__":
-   manager = FileManager('Articles/corpus.txt')
+   app.run(host='localhost', port=5000)

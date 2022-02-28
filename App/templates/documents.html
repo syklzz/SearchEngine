@@ -1,0 +1,51 @@
+<html>
+    <style>
+        form{
+            margin: auto 0;
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+        .query{
+            margin-top: 20px;
+            width: 80%;
+            height: 50px;
+            font-size: large;
+        }
+        .button{
+            margin-top: 20px;
+            width: 19%;
+            height: 50px;
+        }
+        div{
+            margin: auto 0;
+            margin-top: 50px;
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+        .title{
+            font-size: x-large;
+        }
+        .document{
+            font-size: large;
+        }
+    </style>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+   <body>
+        <form action="/search" method = "POST">
+            <input class="query" type = "text" name = "Query" value="{{query}}"/>
+            <input class="button" type = "submit" value = "SEARCH" />
+        </form>
+
+        {%for i in range(size)%}
+        <div>
+            <a class="title" href="{{ url_for('info', id=position[i]) }}">{{titles[i]}}</a>
+            <p class="document">{{documents[i]}}</p>
+        </div>
+        {%endfor%}
+
+    </body>
+</html>
